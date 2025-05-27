@@ -17,30 +17,36 @@ e1.Id = 1;
 e1.Name = "B";
 e1.IdCard = "123";
 e1.Birthday = new DateTime(1999, 12, 12);
+employees.Add(e1);
 
 FulltimeEmployee e2 = new FulltimeEmployee();
 e2.Id = 2;
-e2.Name = "B";
+e2.Name = "K";
 e2.IdCard = "128";
 e2.Birthday = new DateTime(1991, 12, 12);
+employees.Add(e2);
 
 FulltimeEmployee e3 = new FulltimeEmployee();
 e3.Id = 3;
 e3.Name = "A";
 e3.IdCard = "121";
 e3.Birthday = new DateTime(1979, 12, 12);
+employees.Add(e3);
 
 FulltimeEmployee e4 = new FulltimeEmployee();
 e4.Id = 4;
 e4.Name = "D";
 e4.IdCard = "126";
 e4.Birthday = new DateTime(1899, 12, 12);
+employees.Add(e4);
 
-PartimeEmployee partimeEmployee = new OOP2.PartimeEmployee();
-e4.Id = 5;
-e4.Name = "DA";
-e4.IdCard = "116";
-e4.Birthday = new DateTime(2000, 12, 12);
+PartimeEmployee e5 = new PartimeEmployee();
+e5.Id = 5;
+e5.Name = "DA";
+e5.IdCard = "116";
+e5.Birthday = new DateTime(2000, 12, 12);
+e5.WorkingHour = 3;
+employees.Add(e5);
 
 //Cau 2: READ
 employees.ForEach(e=>Console.WriteLine(e));
@@ -54,6 +60,8 @@ foreach  (var employee in employees)
 List<FulltimeEmployee> fe_list = employees.OfType<FulltimeEmployee>().ToList();
 Console.WriteLine("Nhan su chinh thuc/ Fulltime");
 fe_list.ForEach(e=>Console.WriteLine(e));
+
+//hoac
 
 List<FulltimeEmployee> fe_list2 = new List<FulltimeEmployee>();
 
@@ -97,3 +105,42 @@ for (int i = 0; i < employees.Count; i++ )
 
 employees.ForEach(e => Console.WriteLine(e));
 
+//Cau 5: UPDATE NAME
+Console.WriteLine("==========Update Name===========");
+string name = "A";
+
+foreach (var e in employees)
+{
+    if (e.Name.Equals(name))
+    {
+        Console.WriteLine($"Enter a new name for Employee \n {e.ToString()}: ");
+        e.Name = Console.ReadLine();
+        Console.WriteLine("Employee after rename: ");
+        Console.WriteLine(e);
+    }
+}
+
+//Cach 2
+Console.WriteLine("===========Rename cach 2===========");
+name = "B"; 
+Employee employ = employees.Find(e => e.Name.ToLower().Equals(name.ToLower()));
+
+Console.WriteLine("Before rename: ");
+Console.WriteLine(employ.ToString());
+
+if (employ != null)
+    employ.Name = "C";
+
+Console.WriteLine("After rename: ");
+Console.WriteLine(employ.ToString());
+
+//Cau 6: DELETE
+Console.WriteLine("==========Delete===========");
+Console.WriteLine("List before delete: ");
+employees.ForEach(e => Console.WriteLine(e));
+
+Employee em = employees.Find(e => e.Name.ToLower().Equals("DA".ToLower()));
+employees.Remove(em);
+
+Console.WriteLine("List after delete: ");
+employees.ForEach(e => Console.WriteLine(e));
