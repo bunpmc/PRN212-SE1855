@@ -14,16 +14,16 @@ class Program
     public delegate int[] MyDelegate2(int n);
     static int[] DanhSachSoChan(int n)
     {
-        List<int> list = new List<int>;
+        List<int> list = new List<int>();
         for (int i = 2; i <= n; i = i + 2)
         {
             list.Add(i);
         }
-        return list.ToArray;
+        return list.ToArray();
     }
     static int[] DanhSachSoNguyenTo(int n)
     {
-        List<int> list = new LIst<int>();
+        List<int> list = new List<int>();
         for (int i=2; i<=n;i++)
         {
             int count = 0;
