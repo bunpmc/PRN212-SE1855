@@ -71,7 +71,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter7", "Chapter7", "{9F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWPF", "HelloWPF\HelloWPF.csproj", "{DAF544F8-3443-45C3-97D5-9D47C536D0D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTWPF1", "BTWPF1\BTWPF1.csproj", "{B80488E3-198E-497B-8E7E-163DE6FDD1C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonControl_TongHop", "BTWPF1\ButtonControl_TongHop.csproj", "{B80488E3-198E-497B-8E7E-163DE6FDD1C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
