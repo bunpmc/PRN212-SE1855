@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp.ProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="ProductWindow" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="lvProduct" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,241">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Ma san pham" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Ten san pham" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="So luong" DisplayMemberBinding="{Binding Quantity}"/>
+                    <GridViewColumn Header="Gia" DisplayMemberBinding="{Binding Price}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Ma san pham" HorizontalAlignment="Left" Margin="54,211,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ten san pham" HorizontalAlignment="Left" Margin="54,263,0,0" VerticalAlignment="Top"/>
+        <Label Content="So luong" HorizontalAlignment="Left" Margin="53,237,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gia" HorizontalAlignment="Left" Margin="54,288,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.642,2.024"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="169,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Margin="169,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="169,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="169,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnThemSanPham" Content="Them moi san pham" HorizontalAlignment="Left" Margin="150,332,0,0" VerticalAlignment="Top" Click="btnThemSanPham_Click"/>
+
+    </Grid>
+</Window>
