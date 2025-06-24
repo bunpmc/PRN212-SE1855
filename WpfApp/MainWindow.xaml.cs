@@ -25,12 +25,14 @@ namespace WpfApp
         {
             CustomerWindow cw = new CustomerWindow();
             cw.Show();
+            Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             ProductWindow pw = new ProductWindow();
             pw.Show();
+            Close();
         }
     }
 }

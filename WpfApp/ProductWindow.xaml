@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ProductWindow" Height="450" Width="800">
     <Grid>
-        <ListView x:Name="lvProduct" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,241">
+        <ListView x:Name="lvProduct" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,241" SelectionChanged="lvProduct_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Ma san pham" DisplayMemberBinding="{Binding Id}"/>
@@ -26,6 +26,8 @@
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="169,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="169,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnThemSanPham" Content="Them moi san pham" HorizontalAlignment="Left" Margin="150,332,0,0" VerticalAlignment="Top" Click="btnThemSanPham_Click"/>
+        <Button x:Name="btnSua" Content="Sua" HorizontalAlignment="Left" Margin="282,332,0,0" VerticalAlignment="Top" Click="btnSua_Click" Width="46"/>
+        <Button x:Name="btnXoa" Content="Xoa" HorizontalAlignment="Left" Margin="350,332,0,0" VerticalAlignment="Top" Width="50" Click="btnXoa_Click"/>
 
     </Grid>
 </Window>

@@ -12,5 +12,7 @@ namespace Services
         public void GenerateSampleDataset();
         public List<Product> GetProducts();
         public bool SaveProduct(Product product);
+        public bool UpdateProduct(Product product);
+        public bool DeleteProduct(Product product);
     }
 }

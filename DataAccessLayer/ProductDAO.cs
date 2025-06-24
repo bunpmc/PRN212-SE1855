@@ -27,12 +27,42 @@ namespace DataAccessLayer
         public bool SaveProduct(Product product) { 
             Product old = products.FirstOrDefault(p => p.Id ==  product.Id);
 
-            if (old!=null)
+            if (old==null)
             {
                 return false;
             }
 
             products.Add(product);
+
+            return true;
+        }
+
+        public bool UpdateProduct(Product product)
+        {
+            Product old = products.FirstOrDefault(p => p.Id == product.Id);
+
+            if (old == null)
+            {
+                return false;
+            }
+
+            old.Name = product.Name;
+            old.Quantity = product.Quantity;
+            old.Price = product.Price;
+
+            return true;
+        }
+
+        public bool DeleteProduct(Product product)
+        {
+            Product old = products.FirstOrDefault(p => p.Id == product.Id);
+
+            if (old == null)
+            {
+                return false;
+            }
+
+            products.Remove(old);
 
             return true;
         }
