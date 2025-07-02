@@ -39,7 +39,7 @@
                 <Button x:Name="btnClear" Content="Clear" FontSize="20" HorizontalAlignment="Left" Margin="344,62,0,0" VerticalAlignment="Top" Click="btnClear_Click"/>
                 <Button x:Name="btnSave" Content="Save" FontSize="20" HorizontalAlignment="Left" Margin="398,62,0,0" VerticalAlignment="Top" Click="btnSave_Click"/>
                 <Button x:Name="btnUpdate" Content="Update" FontSize="20" HorizontalAlignment="Left" Margin="448,62,0,0" VerticalAlignment="Top" Click="btnUpdate_Click"/>
-                <Button x:Name="btnDelete" Content="Delete" FontSize="20" HorizontalAlignment="Left" Margin="524,62,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="btnDelete" Content="Delete" FontSize="20" HorizontalAlignment="Left" Margin="524,62,0,0" VerticalAlignment="Top" Click="btnDelete_Click"/>
 
             </Grid>
         </DockPanel>

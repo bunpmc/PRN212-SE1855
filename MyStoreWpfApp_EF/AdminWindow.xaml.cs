@@ -229,5 +229,47 @@ namespace MyStoreWpfApp_EF
             }
 
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            int id = int.Parse(txtMaSanPham.Text);
+            Product product = context.Products.FirstOrDefault(p => p.ProductId == id);
+            if (product == null)
+            {
+                MessageBox.Show("Khong tim thay san pham can xoa!",
+                    "Thong bao xoa loi",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            MessageBoxResult result = MessageBox.Show("Ban co chac chan muon xoa san pham nay?",
+                "Xac nhan xoa san pham",
+                MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                context.Products.Remove(product);
+                context.SaveChanges();
+                //Cap nhat lai giao dien
+                TreeViewItem cate_node_selected = tvCategory.SelectedItem as TreeViewItem;
+                if (cate_node_selected != null)
+                {
+                    Category category = cate_node_selected.Tag as Category;
+                    if (category != null)
+                    {
+                        cate_node_selected.Items.Clear();
+                        var products = context.Products
+                            .Where(p => p.CategoryId == category.CategoryId)
+                            .ToList();
+                        foreach (var product_new in products)
+                        {
+                            TreeViewItem product_node = new TreeViewItem();
+                            product_node.Header = product_new.ProductName;
+                            product_node.Tag = product_new;
+                            cate_node_selected.Items.Add(product_node);
+                        }
+                        LoadProductIntoListView(category);
+                    }
+                }
+            }
+        }
     }
 }
